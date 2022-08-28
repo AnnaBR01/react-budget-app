@@ -1,5 +1,11 @@
 import React from "react";
+import { Header } from "./components/Header/Header";
+import { StyledApp } from "./ui/styles";
 
 export const App = () => {
-  return <div>App</div>;
+  return (
+    <StyledApp>
+      <Header />
+    </StyledApp>
+  );
 };
