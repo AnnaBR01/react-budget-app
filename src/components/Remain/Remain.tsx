@@ -1,33 +1,31 @@
-import React from "react";
 import { useBudgetContext } from "../../context/BudgetContext/hooks";
 import { useCurrencyContext } from "../../context/CurrencyContext/hooks";
+import { useExpensesContext } from "../../context/ExpensesContext/hooks";
+import { IExpense } from "../../context/ExpensesContext/types";
 import { useToggle } from "../../hooks/useToggle";
 import { Description, StyledRemain } from "./styles";
 
 export const Remain = () => {
   const { currency } = useCurrencyContext();
   const { budget } = useBudgetContext();
-  const [isOverspending, toggleOverspending] = useToggle();
+  const { expenses } = useExpensesContext();
+  let [isOverspending] = useToggle();
 
-  //   const calcRemainddddd = (): void => {
-  //     const remain = budget - 1000;
-  //     if (remain < 0) {
-  //       toggleOverspending();
-  //     }
-  //   };
+  const sumExpenses = expenses.reduce((sum: number, expense: IExpense) => {
+    return sum + +expense.cost;
+  }, 0);
 
-  const calcRemain = () => {
-    return budget ? budget - 1000 : 0;
-  };
+  const remain = budget - sumExpenses;
+  if (remain < 0) {
+    isOverspending = true;
+  }
 
   return (
-    <StyledRemain isOverspending>
+    <StyledRemain $overspending={isOverspending}>
       <Description>
         {isOverspending
-          ? `Overspending by ${currency}
-          ${calcRemain()}`
-          : `Remaining: ${currency}
-        ${calcRemain()}`}
+          ? `Overspending by ${currency}${remain}`
+          : `Remaining: ${currency}${remain}`}
       </Description>
     </StyledRemain>
   );

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Color } from "../../config/colors";
 import { Media } from "../../config/media";
 
-const StyledBadget = styled.div`
+const StyledBudget = styled.div`
   grid-area: budget;
   display: flex;
   justify-content: space-between;
@@ -45,6 +45,7 @@ const Button = styled.button`
 `;
 const Input = styled.input`
   background: none;
+  outline: none;
   border: none;
   font-weight: 500;
   font-size: 20px;
@@ -59,4 +60,4 @@ const Input = styled.input`
   }
 `;
 
-export { StyledBadget, Description, Button, Input };
+export { StyledBudget, Description, Button, Input };

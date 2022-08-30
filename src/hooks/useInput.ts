@@ -7,9 +7,5 @@ export const useInput = (initialState: string = "") => {
     setValue(event.target.value);
   }, []);
 
-  const reset = (): void => {
-    setValue("");
-  };
-
-  return { value, onChange, reset };
+  return { value, onChange, setValue };
 };
