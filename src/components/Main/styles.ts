@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Color } from "../../config/colors";
 import { Media } from "../../config/media";
 
-const StyledMain = styled.div`
+const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   gap: 30px;

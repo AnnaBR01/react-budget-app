@@ -9,4 +9,5 @@ export enum Color {
   Turquoise = "#23C9FF",
   Grey = "#999999",
   Black = "#000000",
+  GrayBlue = "#CCD5FF",
 }

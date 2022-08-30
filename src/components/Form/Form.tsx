@@ -8,6 +8,7 @@ import { Errors, Input, StyledForm } from "./styles";
 type FormValues = {
   name: string;
   cost: number;
+  id: string;
 };
 
 export const Form = () => {

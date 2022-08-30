@@ -14,6 +14,15 @@ const UseContextExpenses = () => {
         ...ctx,
         expenses: [...ctx.expenses, { ...expense, id: uuidv4() }],
       })),
+
+    deleteExpense: (id: string) => {
+      setExpensesContext((ctx) => ({
+        ...ctx,
+        expenses: ctx.expenses.filter(
+          (currentExpense) => id !== currentExpense.id
+        ),
+      }));
+    },
   });
 
   console.log(expensesContext);
