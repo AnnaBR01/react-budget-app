@@ -12,4 +12,14 @@ const StyledMain = styled.main`
   }
 `;
 
-export { StyledMain };
+const Description = styled.div`
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  margin-block: 89px 117px;
+  ${Media.LG} {
+    font-size: 26px;
+  }
+`;
+
+export { StyledMain, Description };
