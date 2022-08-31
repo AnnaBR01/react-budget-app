@@ -1,4 +1,3 @@
-import React from "react";
 import { Budget } from "../Budget/Budget";
 import { CustomSelect } from "../CustomSelect/CustomSelect";
 import { Remain } from "../Remain/Remain";

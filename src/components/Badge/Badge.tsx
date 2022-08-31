@@ -1,4 +1,3 @@
-import React from "react";
 import { useCurrencyContext } from "../../context/CurrencyContext/hooks";
 import { StyledBadge } from "./styles";
 

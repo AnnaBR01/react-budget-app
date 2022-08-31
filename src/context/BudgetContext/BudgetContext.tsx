@@ -11,7 +11,6 @@ const UseBudgetContextValue = () => {
     setBudget: (newCurrency) =>
       setBudgetContext((ctx) => ({ ...ctx, budget: newCurrency })),
   });
-
   return budgetContext;
 };
 

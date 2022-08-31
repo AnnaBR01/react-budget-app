@@ -12,7 +12,6 @@ const UseContextCurrencyValue = () => {
     setCurrency: (newCurrency) =>
       setCurrencyContext((ctx) => ({ ...ctx, currency: newCurrency })),
   });
-
   return currencyContext;
 };
 

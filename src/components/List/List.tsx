@@ -1,5 +1,3 @@
-import React from "react";
-import { useExpensesContext } from "../../context/ExpensesContext/hooks";
 import { IExpense } from "../../context/ExpensesContext/types";
 import { Item } from "../Item/Item";
 import { StyledList } from "./styles";

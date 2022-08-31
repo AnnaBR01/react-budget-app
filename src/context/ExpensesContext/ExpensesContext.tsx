@@ -25,7 +25,6 @@ const UseContextExpenses = () => {
     },
   });
 
-  console.log(expensesContext);
   return expensesContext;
 };
 

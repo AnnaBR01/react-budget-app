@@ -1,6 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
-import { useDebounce } from "../../hooks/useDebounce";
-import { useInput } from "../../hooks/useInput";
+import { ChangeEvent } from "react";
 import { StyledInput } from "./styles";
 
 interface IProps {

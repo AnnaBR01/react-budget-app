@@ -1,4 +1,3 @@
-import React from "react";
 import { useCurrencyContext } from "../../context/CurrencyContext/hooks";
 import { useExpensesContext } from "../../context/ExpensesContext/hooks";
 import { IExpense } from "../../context/ExpensesContext/types";
