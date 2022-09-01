@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useExpensesContext } from "../../context/ExpensesContext/hooks";
+import { IExpense } from "../../context/ExpensesContext/types";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useInput } from "../../hooks/useInput";
 import { Input } from "../Input/Input";
@@ -10,24 +12,27 @@ export const Main = () => {
   const { value, onChange } = useInput();
   const { expenses } = useExpensesContext();
   const debounceSearchValue = useDebounce(value);
+  const [currentExpensesValue, setCurrentExpensesValue] =
+    useState<IExpense[]>(expenses);
 
-  const filteredExpenses = expenses.filter((expense) => {
-    return expense.name
-      .toLowerCase()
-      .includes(debounceSearchValue.toLowerCase());
-  });
-
-  let isFound = true;
-  if (filteredExpenses.length === 0 && debounceSearchValue.length !== 0) {
-    isFound = false;
-  }
+  useEffect(() => {
+    debounceSearchValue
+      ? setCurrentExpensesValue(
+          expenses.filter((expense) => {
+            return expense.name
+              .toLowerCase()
+              .includes(debounceSearchValue.toLowerCase());
+          })
+        )
+      : setCurrentExpensesValue(expenses);
+  }, [debounceSearchValue, expenses]);
 
   return (
     <StyledMain>
       <Title title="Expenses" />
       <Input value={value} onChange={onChange} />
-      {isFound ? (
-        <List expenses={filteredExpenses} />
+      {currentExpensesValue.length > 0 || debounceSearchValue.length === 0 ? (
+        <List expenses={currentExpensesValue} />
       ) : (
         <Description>Oooops 🙈</Description>
       )}

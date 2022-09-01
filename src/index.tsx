@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { App } from "./App";
+import { AppContextProvider } from "./context/AppContextProvider";
 import { BudgetContextProvider } from "./context/BudgetContext/BudgetContext";
 import { CurrencyContextProvider } from "./context/CurrencyContext/CurrencyContext";
 import { ExpensesContextProvider } from "./context/ExpensesContext/ExpensesContext";
@@ -12,13 +13,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <ExpensesContextProvider>
-      <BudgetContextProvider>
-        <CurrencyContextProvider>
-          <GlobalStyles />
-          <App />
-        </CurrencyContextProvider>
-      </BudgetContextProvider>
-    </ExpensesContextProvider>
+    <AppContextProvider>
+      <GlobalStyles />
+      <App />
+    </AppContextProvider>
   </>
 );

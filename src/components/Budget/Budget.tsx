@@ -11,41 +11,42 @@ export const Budget = () => {
   const [isEditMode, toggleIsEditMode] = useToggle();
   const { value, onChange, setValue } = useInput();
 
-  const handleClickSave = (): void => {
+  const handleSave = (): void => {
     toggleIsEditMode();
     setBudget(+value);
     setValue("");
   };
 
-  const handleClickEdit = (): void => {
+  const handleEdit = (): void => {
     toggleIsEditMode();
   };
 
   return (
     <StyledBudget>
       {isEditMode ? (
-        <Input
-          placeholder="Enter budget..."
-          type="number"
-          step="0.01"
-          value={value}
-          onChange={onChange}
-        ></Input>
+        <>
+          <Input
+            placeholder="Enter budget..."
+            type="number"
+            step="0.01"
+            value={value}
+            onChange={onChange}
+          ></Input>
+          <Button type="button" onClick={handleSave}>
+            Save
+          </Button>
+        </>
       ) : (
-        <Description>
-          Budget: {currency}
-          {budget}
-        </Description>
-      )}
+        <>
+          <Description>
+            Budget: {currency}
+            {budget}
+          </Description>
 
-      {isEditMode ? (
-        <Button type="button" onClick={handleClickSave}>
-          Save
-        </Button>
-      ) : (
-        <Button type="button" onClick={handleClickEdit}>
-          Edit
-        </Button>
+          <Button type="button" onClick={handleEdit}>
+            Edit
+          </Button>
+        </>
       )}
     </StyledBudget>
   );

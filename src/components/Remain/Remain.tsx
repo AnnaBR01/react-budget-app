@@ -11,20 +11,21 @@ export const Remain = () => {
   const { expenses } = useExpensesContext();
   let [isOverspending] = useToggle();
 
-  const sumExpenses = expenses.reduce((sum: number, expense: IExpense) => {
-    return sum + +expense.cost;
-  }, 0);
+  const remain =
+    budget -
+    expenses.reduce((sum: number, expense: IExpense) => {
+      return sum + +expense.cost;
+    }, 0);
 
-  const remain = budget - sumExpenses;
   if (remain < 0) {
     isOverspending = true;
   }
 
   return (
     <StyledRemain $overspending={isOverspending}>
-      <Description>
+      <Description $overspending={isOverspending}>
         {isOverspending
-          ? `Overspending by ${currency}${remain}`
+          ? `Overspending by ${currency}${Math.abs(remain)}`
           : `Remaining: ${currency}${remain}`}
       </Description>
     </StyledRemain>

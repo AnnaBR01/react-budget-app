@@ -6,5 +6,5 @@ export interface ITitle {
 
 export interface IOption {
   readonly value: Currency;
-  readonly label: string;
+  readonly label: keyof typeof Currency;
 }

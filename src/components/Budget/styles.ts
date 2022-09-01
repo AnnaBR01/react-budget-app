@@ -48,6 +48,7 @@ const Input = styled.input`
   outline: none;
   border: none;
   font-weight: 500;
+  width: 153px;
   font-size: 20px;
   line-height: 24px;
   color: ${Color.TransparentWhite};
@@ -57,6 +58,10 @@ const Input = styled.input`
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+  }
+
+  ${Media.LG} {
+    width: 170px;
   }
 `;
 

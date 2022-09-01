@@ -16,8 +16,10 @@ const StyledRemain = styled.div<{ $overspending: boolean }>`
   }
 `;
 
-const Description = styled.p`
-  font-weight: 500;
+const Description = styled.p<{ $overspending: boolean }>`
+  font-weight: ${({ $overspending }) => ($overspending ? 700 : 500)};
+  color: ${({ $overspending }) =>
+    $overspending ? `${Color.White}` : `${Color.Black}`};
   font-size: 20px;
   line-height: 24px;
 
