@@ -33,7 +33,7 @@ export const Form = () => {
         {...register("name", {
           required: "Name is requared",
           pattern: {
-            value: /[A-Za-z]/,
+            value: /[A-Za-z,а-яА-ЯёЁ]/,
             message: "Name must contain only letters",
           },
           maxLength: {

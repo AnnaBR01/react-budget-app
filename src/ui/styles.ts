@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../config/media";
+import { Media } from "./media";
 
 const StyledApp = styled.div`
   padding: 29px 20px 53px;

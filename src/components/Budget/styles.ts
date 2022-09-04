@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Color } from "../../config/colors";
-import { Media } from "../../config/media";
+import { Color } from "../../ui/colors";
+import { Media } from "../../ui/media";
 
 const StyledBudget = styled.div`
   grid-area: budget;

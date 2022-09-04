@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../config/media";
+import { Media } from "../../ui/media";
 
 const StyledTitle = styled.h2`
   font-weight: 700;

@@ -31,7 +31,7 @@ export const Main = () => {
     <StyledMain>
       <Title title="Expenses" />
       <Input value={value} onChange={onChange} />
-      {currentExpensesValue.length > 0 || debounceSearchValue.length === 0 ? (
+      {currentExpensesValue.length > 0 ? (
         <List expenses={currentExpensesValue} />
       ) : (
         <Description>Oooops 🙈</Description>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../config/media";
+import { Media } from "../../ui/media";
 
 const StyledHeader = styled.header`
   display: grid;

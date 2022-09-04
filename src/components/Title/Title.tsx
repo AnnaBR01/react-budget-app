@@ -1,6 +1,9 @@
 import React from "react";
-import { ITitle } from "../../types";
 import { StyledTitle } from "./styles";
+
+export interface ITitle {
+  title: string;
+}
 
 export const Title = ({ title }: ITitle) => {
   return <StyledTitle>{title}</StyledTitle>;

@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from "react";
 import { IExpense } from "../../context/ExpensesContext/types";
 import { Badge } from "../Badge/Badge";
 import { Button, Expense, StyledItem } from "./styles";
-import { ReactComponent as Close } from "../../assets/icons/close.svg";
+import { ReactComponent as Close } from "../../assets/icons/close-button.svg";
 import { useExpensesContext } from "../../context/ExpensesContext/hooks";
 
 interface IProps {
